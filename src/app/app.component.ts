@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 
+// Decorator
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-root', // exposed in a selector -- mandatory and element selector is recommended
+  templateUrl: './app.component.html',  // html -- mandatory and it should be only one
+  styleUrls: ['./app.component.css'] // css -- optional and can be multiple
 })
 export class AppComponent {
+  // ts
   title = 'phonebook-crud-ng9';
 }
