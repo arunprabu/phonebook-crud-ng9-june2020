@@ -31,6 +31,9 @@ export class ConceptsComponent implements OnInit {
   // property binding related
   companyName = 'Hexaware';
 
+  // two way binding related
+  courseName = 'Angular';
+
   constructor() {
     
   }
@@ -38,10 +41,12 @@ export class ConceptsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // string interpolation related
   getAppName(){
     return this.appName;
   }
 
+  // event binding related
   btnClickHandler(e){
     console.log(e);
     alert('clicked');

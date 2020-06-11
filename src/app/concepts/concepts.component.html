@@ -45,7 +45,12 @@
       <br>
       <button (click)="btnClickHandler($event)">Click me</button>
 
-
+      <hr>
+      <h4>Two Way Binding</h4>
+      <p>{{courseName}}</p> <!-- string interpolation -->
+      <input type="text" [value]="courseName"> <!-- prop binding-->
+      <br>
+      <input type="text" [(ngModel)]="courseName"> 
 
     </div>
 
