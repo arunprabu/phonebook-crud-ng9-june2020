@@ -11,10 +11,15 @@ import { Component, OnInit } from '@angular/core';
           <a class="nav-link" href="#">Back to top</a>
         </li>
       </app-menu>
-      <p>Copyright &copy; 2020 | Hexaware </p>
+      <p class='redText'>Copyright &copy; 2020 | Hexaware </p>
     </div>
   `,
   styles: [
+    `
+      .redText{
+        color: blue;
+      }
+    `
   ]
 })
 export class FooterComponent implements OnInit {

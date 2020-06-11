@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'; // node_modules import
 
 // Decorator
 @Component({

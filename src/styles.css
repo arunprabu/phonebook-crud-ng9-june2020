@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* any component can use the following styles */
+
+.redText{
+  color: red;
+}
