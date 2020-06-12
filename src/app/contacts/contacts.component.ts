@@ -24,8 +24,7 @@ export class ContactsComponent implements OnInit {
       .subscribe( (res: any[]) => { // 3. get the resp from the service
         console.log(res);
         this.contactList = res;
-      })
-    
+      });
   }
 
 }
