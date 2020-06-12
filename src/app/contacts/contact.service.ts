@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class ContactService {
 
-  REST_API_URL = 'https://reqres.in/api/users';
+  private REST_API_URL = 'http://jsonplaceholder.typicode.com/users';
 
   constructor( private http: HttpClient ) { }
 
@@ -28,6 +28,16 @@ export class ContactService {
           return res;
         }));
 
+  }
+
+  getContacts(){ // 1. get the req from comp
+
+    // 2. send the req to the REST api -- with get method using HttpClient
+    return this.http.get(this.REST_API_URL)
+      .pipe( map ((res: any[]) => { // 3. get the resp from the REST API 
+        console.log(res);
+        return res; // 4. send it back to the comp
+      }));
   }
 
 }
