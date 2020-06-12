@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { ConceptsComponent } from './concepts/concepts.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { AboutComponent } from './about/about.component';
+import { CpbComponent } from './concepts/cpb/cpb.component';
+import { CebComponent } from './concepts/ceb/ceb.component';
 
 // main switching box
 @NgModule({
@@ -22,7 +24,9 @@ import { AboutComponent } from './about/about.component';
     HomeComponent,
     ConceptsComponent,
     ContactsComponent,
-    AboutComponent
+    AboutComponent,
+    CpbComponent,
+    CebComponent
   ],
   imports: [
     BrowserModule,

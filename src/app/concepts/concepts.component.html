@@ -1,4 +1,7 @@
 <div class="container-fluid">
+
+  <p>Data received from Child comp: {{profileName}}</p>
+
   <nav>
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
       <a class="nav-item nav-link active"  data-toggle="tab" href="#basic-databinding"
@@ -56,16 +59,35 @@
 
     <div class="tab-pane fade" id="cpb-tab" role="tabpanel" aria-labelledby="cpb-tab-tab">
       <h2>Custom Property Binding -- Parent to Child Comp Communication</h2>
+      <app-cpb></app-cpb>
+      <!-- step 2: send data to child comp thru the custom property 'age' using custom prop binding -->
+      <app-cpb [age]='30'></app-cpb>
+      <app-cpb [age]='40'></app-cpb>
+      <app-cpb [age]='avgExp'></app-cpb>
     </div>
 
     <div class="tab-pane fade" id="ceb-tab" role="tabpanel" aria-labelledby="ceb-tab-tab">
-      <h2>Child to Parent Comp Communication</h2>
+      <h2>Custom Event Binding -- Child to Parent Comp Communication</h2>
+      <!-- step 3 of CEB -- work with handler -->
+      <app-ceb (profileLoaded)='profileLoadedHandler($event)'></app-ceb>
+
+
     </div>
 
     <div class="tab-pane fade" id="directives-tab" role="tabpanel"
       aria-labelledby="directives-tab">
       <h2>Directives</h2>
-
+      <p>
+        Special instructions to Change the DOM 
+      </p>
+      <pre>
+        1. Attribute Directives
+            Examples: ngClass, routerLink, routerLinkActive, ngStyle
+        2. Structural Directives (conditionals, looping)
+            *ngIf,
+            *ngFor,
+            ngSwitch 
+      </pre>
     </div>
 
   </div>

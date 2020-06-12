@@ -34,6 +34,9 @@ export class ConceptsComponent implements OnInit {
   // two way binding related
   courseName = 'Angular';
 
+  // for receiving custom event binding data
+  profileName = '';
+
   constructor() {
     
   }
@@ -50,5 +53,11 @@ export class ConceptsComponent implements OnInit {
   btnClickHandler(e){
     console.log(e);
     alert('clicked');
+  }
+
+  // Step 4 of CEB -- define the handler
+  profileLoadedHandler( e: any){
+    console.log('profile loaded works', e);
+    this.profileName = e;
   }
 }
