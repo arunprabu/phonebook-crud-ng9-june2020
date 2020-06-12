@@ -25,7 +25,7 @@ export class ConceptsComponent implements OnInit {
   // string interpolation related
   appName = 'Phone Book App!';
   avgExp = 3;
-  isLoggedIn = true;
+  isLoggedIn = false;
   skillsList: string[] = [ 'html', 'css', 'ts', 'ng'];
 
   // property binding related
@@ -59,5 +59,9 @@ export class ConceptsComponent implements OnInit {
   profileLoadedHandler( e: any){
     console.log('profile loaded works', e);
     this.profileName = e;
+  }
+
+  isAuth(){
+    return this.isLoggedIn;
   }
 }

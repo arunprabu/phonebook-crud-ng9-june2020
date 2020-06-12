@@ -1,6 +1,6 @@
 <div class="container-fluid">
 
-  <p>Data received from Child comp: {{profileName}}</p>
+  <p>Data received from Child comp: {{ profileName }}</p>
 
   <nav>
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -88,6 +88,47 @@
             *ngFor,
             ngSwitch 
       </pre>
+
+      <p>*ngIf</p>
+      <!-- <div class="alert alert-success" *ngIf='isAuth()'>
+        Logged In
+      </div>
+
+      <div class="alert alert-danger" *ngIf='!isAuth()'>
+        Pls login
+      </div> -->
+
+      <div class="alert alert-success" *ngIf="isAuth(); else NotAuthBox">
+        Logged In
+      </div>
+      
+      <ng-template #NotAuthBox>
+        <div class="alert alert-danger">
+          Pls login
+        </div>
+      </ng-template>
+
+
+      <p>*ngFor</p>
+      <ul>
+        <li *ngFor="let skill of skillsList">{{skill}}</li>
+      </ul>
+
+      <!-- todo: find index in *ngFor -->
+
+      <!-- todo: ngSwitch -->
+
+
+      <p>Custom Attribute directives</p>
+      <p>ng g d shared/directives/colorizer</p>
+
+      <div appColorizer>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Quae, recusandae incidunt. 
+        Cum dolore eius aliquam distinctio quis tenetur porro ipsam harum a 
+        quibusdam reiciendis eos maiores, cupiditate dignissimos eligendi ad.
+      </div>
+
     </div>
 
   </div>

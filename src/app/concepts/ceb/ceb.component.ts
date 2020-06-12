@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-ceb',
@@ -21,5 +21,5 @@ export class CebComponent implements OnInit {
     // Step 2: Use Emit method to trigger the custom event
     this.profileLoaded.emit('Arun');
   }
-
+  
 }

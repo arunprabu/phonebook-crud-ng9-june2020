@@ -4,15 +4,18 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { MenuComponent } from './shared/menu/menu.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { MenuComponent } from './shared/components/menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { ConceptsComponent } from './concepts/concepts.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { AboutComponent } from './about/about.component';
 import { CpbComponent } from './concepts/cpb/cpb.component';
 import { CebComponent } from './concepts/ceb/ceb.component';
+import { ColorizerDirective } from './shared/directives/colorizer.directive';
+import { AddContactComponent } from './contacts/add-contact/add-contact.component';
+import { ContactDetailsComponent } from './contacts/contact-details/contact-details.component';
 
 // main switching box
 @NgModule({
@@ -26,7 +29,10 @@ import { CebComponent } from './concepts/ceb/ceb.component';
     ContactsComponent,
     AboutComponent,
     CpbComponent,
-    CebComponent
+    CebComponent,
+    ColorizerDirective,
+    AddContactComponent,
+    ContactDetailsComponent
   ],
   imports: [
     BrowserModule,
