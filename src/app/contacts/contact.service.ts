@@ -49,5 +49,14 @@ export class ContactService {
       }));
   }
 
+  updateContact(contactData) {
+    console.log(contactData);
+    return this.http.put(this.REST_API_URL + '/' + contactData.id, contactData)
+      .pipe(map( (res: any) => { // 3. get the resp from rest api
+        console.log(res);
+        return res; // 4. send it back to the comp
+      }));
+  }
+
 
 }

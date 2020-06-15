@@ -11,6 +11,7 @@ import { ContactService } from '../contact.service';
 export class ContactDetailsComponent implements OnInit {
 
   contactData: any;
+  duplicateContactData: any;
 
   constructor( private contactService: ContactService, private route: ActivatedRoute) { }
 
@@ -26,9 +27,20 @@ export class ContactDetailsComponent implements OnInit {
       .subscribe( (res: any) => { // 3. get the resp from service
         console.log(res);
         this.contactData = res;
-      })
-
-    
+      });
   }
 
+  onEditModalOpen(){
+    this.duplicateContactData = JSON.parse(JSON.stringify(this.contactData));
+  }
+
+  updateContactHandler(){
+    console.log(this.duplicateContactData);
+    this.contactService.updateContact(this.duplicateContactData)
+      .subscribe( (res: any) => { // 3. get the resp from service
+        console.log(res);
+        // if /else
+        alert('updated successfully!');
+      });
+  }
 }
