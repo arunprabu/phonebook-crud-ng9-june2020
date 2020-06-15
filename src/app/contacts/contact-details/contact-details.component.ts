@@ -12,6 +12,7 @@ export class ContactDetailsComponent implements OnInit {
 
   contactData: any;
   duplicateContactData: any;
+  isUpdated: boolean;
 
   constructor( private contactService: ContactService, private route: ActivatedRoute) { }
 
@@ -40,7 +41,8 @@ export class ContactDetailsComponent implements OnInit {
       .subscribe( (res: any) => { // 3. get the resp from service
         console.log(res);
         // if /else
-        alert('updated successfully!');
+        this.isUpdated = true;
+        this.contactData = res;
       });
   }
 }
