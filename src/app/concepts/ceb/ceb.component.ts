@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, AfterViewInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-ceb',
@@ -12,14 +12,16 @@ export class CebComponent implements OnInit {
   @Output() profileLoaded = new EventEmitter(); // @Output() will make it a custom event to the selector 'app-ceb'
 
   constructor() {
-    console.log('inside constructor of CEB');
+    console.log('2. Inside constructor of CEB');
   }
 
   // lifecycle hooks
   ngOnInit(): void {
-    console.log('inside ngOnInit of CEB');
+    console.log('4. Inside ngOnInit of CEB');
+  }
+
+  sendToParent(){
     // Step 2: Use Emit method to trigger the custom event
     this.profileLoaded.emit('Arun');
   }
-  
 }

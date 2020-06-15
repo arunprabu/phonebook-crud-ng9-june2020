@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-concepts',
@@ -19,7 +19,7 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 
-export class ConceptsComponent implements OnInit {
+export class ConceptsComponent implements OnInit, AfterViewInit, OnDestroy {
   // ts
   // public variable
   // string interpolation related
@@ -38,10 +38,15 @@ export class ConceptsComponent implements OnInit {
   profileName = '';
 
   constructor() {
-    
+    console.log('1. Inside Concept\'s Constructor' );
   }
 
   ngOnInit(): void {
+    console.log('3. Inside Concept\'s ngOnInit' );
+  }
+
+  ngAfterViewInit(){
+    console.log('5. Inside Concept\'s ngAfterViewInit');
   }
 
   // string interpolation related
@@ -58,10 +63,17 @@ export class ConceptsComponent implements OnInit {
   // Step 4 of CEB -- define the handler
   profileLoadedHandler( e: any){
     console.log('profile loaded works', e);
-    this.profileName = e;
+    this.profileName = e;  // making a change in the view of the Parent Comp
   }
 
   isAuth(){
     return this.isLoggedIn;
+  }
+
+  ngOnDestroy(){
+    console.log('Inside ngOnDestroy');
+    // ideal lifecycle hook for clearing the data, remove the intervals, clear timer
+    // ideal place unsubscribing ajax calls
+    this.skillsList.length = 0;
   }
 }

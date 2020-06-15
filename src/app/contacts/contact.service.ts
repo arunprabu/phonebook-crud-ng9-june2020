@@ -31,13 +31,23 @@ export class ContactService {
   }
 
   getContacts(){ // 1. get the req from comp
-
     // 2. send the req to the REST api -- with get method using HttpClient
     return this.http.get(this.REST_API_URL)
-      .pipe( map ((res: any[]) => { // 3. get the resp from the REST API 
+      .pipe( map ((res: any[]) => { // 3. get the resp from the REST API
         console.log(res);
         return res; // 4. send it back to the comp
       }));
   }
+
+  getContactById(id){ // 1. get the contact id from comp
+    console.log(id);
+    // 2. send the req to rest api
+    return this.http.get(this.REST_API_URL + '/' + id)
+      .pipe(map( (res: any) => { // 3. get the resp from rest api
+        console.log(res);
+        return res; // 4. send it back to the comp
+      }));
+  }
+
 
 }
