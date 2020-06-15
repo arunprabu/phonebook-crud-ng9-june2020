@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ContactService } from '../contact.service';
 
+declare var $: any; // using jquery in angular component
+
 @Component({
   selector: 'app-contact-details',
   templateUrl: './contact-details.component.html',
@@ -32,6 +34,7 @@ export class ContactDetailsComponent implements OnInit {
   }
 
   onEditModalOpen(){
+    this.isUpdated = false;
     this.duplicateContactData = JSON.parse(JSON.stringify(this.contactData));
   }
 
@@ -42,7 +45,10 @@ export class ContactDetailsComponent implements OnInit {
         console.log(res);
         // if /else
         this.isUpdated = true;
-        this.contactData = res;
+        setTimeout( () => {
+          $('#editContactModal').modal('hide');
+          this.contactData = res;
+        }, 4000);
       });
   }
 }
