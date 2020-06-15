@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Contact } from './contact.model';
+import { Observable } from 'rxjs';
 
 // Decorator
 @Injectable({
@@ -22,7 +24,7 @@ export class ContactService {
         // 2.3 use REST API Client to connect to the rest api end point -- HttpClient
 
     return this.http.post(this.REST_API_URL, contactData)
-        .pipe( map( (res: any) => {  // 3. get the Response from REST API
+        .pipe( map( (res: Contact) => {  // 3. get the Response from REST API
           console.log(res);
           // 4. Send the Response to the component
           return res;
@@ -30,12 +32,12 @@ export class ContactService {
 
   }
 
-  getContacts(){ // 1. get the req from comp
+  getContacts(): Observable<Contact[]> { // 1. get the req from comp
     // 2. send the req to the REST api -- with get method using HttpClient
     return this.http.get(this.REST_API_URL)
       .pipe( map ((res: any) => { // 3. get the resp from the REST API
         console.log(res);
-        return res; // 4. send it back to the comp
+        return res.data; // 4. send it back to the comp
       }));
   }
 
@@ -45,7 +47,7 @@ export class ContactService {
     return this.http.get(this.REST_API_URL + '/' + id)
       .pipe(map( (res: any) => { // 3. get the resp from rest api
         console.log(res);
-        return res; // 4. send it back to the comp
+        return res.data; // 4. send it back to the comp
       }));
   }
 

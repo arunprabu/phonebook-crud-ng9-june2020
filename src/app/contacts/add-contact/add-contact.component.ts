@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ContactService } from '../contact.service';
+import { Contact } from '../contact.model';
 
 @Component({
   selector: 'app-add-contact',
@@ -35,9 +36,9 @@ export class AddContactComponent implements OnInit {
     // 2.1 connect to the service using dep injection -- ref constructor
     // 2.2 send the data to the service's method
     this.contactService.createContact(this.contactForm.value)
-      .subscribe( ( res: any) => { // 3. get the resp from service
+      .subscribe( ( res: Contact) => { // 3. get the resp from service
         console.log(res);
-        if(res && res.id) {
+        if (res && res.id) {
           this.isSaved = true;
         }
       });

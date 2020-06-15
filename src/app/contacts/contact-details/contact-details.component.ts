@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ContactService } from '../contact.service';
+import { Contact } from '../contact.model';
 
 declare var $: any; // using jquery in angular component
 
@@ -27,9 +28,9 @@ export class ContactDetailsComponent implements OnInit {
     // 1 . connect to the service -- ref constructor
     // 2. hit the service method with the contactId
     this.contactService.getContactById(id)
-      .subscribe( (res: any) => { // 3. get the resp from service
+      .subscribe( (res: Contact) => { // 3. get the resp from service
         console.log(res);
-        this.contactData = res.data;
+        this.contactData = res;
       });
   }
 
@@ -41,7 +42,7 @@ export class ContactDetailsComponent implements OnInit {
   updateContactHandler(){
     console.log(this.duplicateContactData);
     this.contactService.updateContact(this.duplicateContactData)
-      .subscribe( (res: any) => { // 3. get the resp from service
+      .subscribe( (res: Contact) => { // 3. get the resp from service
         console.log(res);
         // if /else
         this.isUpdated = true;

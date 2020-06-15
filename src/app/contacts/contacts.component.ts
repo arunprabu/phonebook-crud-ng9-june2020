@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactService } from './contact.service';
+import { Contact } from './contact.model';
 
 @Component({
   selector: 'app-contacts',
@@ -9,7 +10,7 @@ import { ContactService } from './contact.service';
 })
 export class ContactsComponent implements OnInit {
 
-  contactList: any[];
+  contactList: Contact[];
 
   constructor( private contactService: ContactService) {
     console.log('Inside constructor');
@@ -21,9 +22,9 @@ export class ContactsComponent implements OnInit {
     // 1. connect to the service -- ref constructor
     // 2. send a call to the service method
     this.contactService.getContacts()
-      .subscribe( (res: any) => { // 3. get the resp from the service
+      .subscribe( (res: Contact[]) => { // 3. get the resp from the service
         console.log(res);
-        this.contactList = res.data;
+        this.contactList = res;
       });
   }
 
