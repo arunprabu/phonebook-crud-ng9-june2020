@@ -12,13 +12,11 @@
 
     <div class="card col-sm-3" *ngFor="let contact of contactList">
       <div class="card-body">
-        <h5 class="card-title">{{contact.name}}</h5>
-        <p class="card-text">{{contact.phone}}</p>
+        <h5 class="card-title">{{contact.first_name}}</h5>
+        <p class="card-text">{{contact.last_name}}</p>
         <a routerLink="/contacts/{{contact.id}}" class="link">View Details</a>
       </div>
     </div>
-    
-
   </div>
 
 </div>

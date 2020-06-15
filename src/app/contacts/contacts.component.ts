@@ -21,9 +21,9 @@ export class ContactsComponent implements OnInit {
     // 1. connect to the service -- ref constructor
     // 2. send a call to the service method
     this.contactService.getContacts()
-      .subscribe( (res: any[]) => { // 3. get the resp from the service
+      .subscribe( (res: any) => { // 3. get the resp from the service
         console.log(res);
-        this.contactList = res;
+        this.contactList = res.data;
       });
   }
 
