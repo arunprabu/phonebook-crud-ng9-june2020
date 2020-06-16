@@ -44,7 +44,7 @@ export class ContactService {
       }));
   }
 
-  getContactById(id){ // 1. get the contact id from comp
+  getContactById(id) { // 1. get the contact id from comp
     console.log(id);
     // 2. send the req to rest api
     return this.http.get(this.REST_API_URL + '/' + id)
@@ -64,7 +64,7 @@ export class ContactService {
       }));
   }
 
-  deleteContact(id) {
+  deleteContact(id): Promise<string> {
     console.log(id);
 
     const deleteContactPromise = new Promise( ( resolve, reject ) => {
@@ -83,7 +83,7 @@ export class ContactService {
         });
     });
 
-    return deleteContactPromise;
+    return deleteContactPromise as Promise<string>;
 
   }
 }
