@@ -1,1 +1,14 @@
-<p>about works!</p>
+<div>
+  <h2>Pipes</h2>
+  <p>{{today}}</p>
+  <p>{{today | date }}</p>
+  <p>{{today | date: 'MM/dd/yyyy, hh:mm:ss a' }}</p> <!-- parameterized pipe -->
+  <br />
+  <p>{{appName}}</p>
+  <p>{{appName | uppercase }}</p>
+
+  <h4>Any to Any Comp Commn </h4>
+  <p>{{profileName}}</p>
+  <input type='text' [(ngModel)]='profileName'>
+  <button type="button" (click)='updateProfileHandler()'>Update Profile</button>
+</div>

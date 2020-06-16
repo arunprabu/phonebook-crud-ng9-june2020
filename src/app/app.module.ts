@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,13 +10,12 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { MenuComponent } from './shared/components/menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { ConceptsComponent } from './concepts/concepts.component';
-import { ContactsComponent } from './contacts/contacts.component';
 import { AboutComponent } from './about/about.component';
 import { CpbComponent } from './concepts/cpb/cpb.component';
 import { CebComponent } from './concepts/ceb/ceb.component';
 import { ColorizerDirective } from './shared/directives/colorizer.directive';
-import { AddContactComponent } from './contacts/add-contact/add-contact.component';
-import { ContactDetailsComponent } from './contacts/contact-details/contact-details.component';
+import { ContactsModule } from './contacts/contacts.module';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
 // main switching box
 @NgModule({
@@ -27,19 +26,17 @@ import { ContactDetailsComponent } from './contacts/contact-details/contact-deta
     MenuComponent,
     HomeComponent,
     ConceptsComponent,
-    ContactsComponent,
     AboutComponent,
     CpbComponent,
     CebComponent,
     ColorizerDirective,
-    AddContactComponent,
-    ContactDetailsComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    ContactsModule,
     AppRoutingModule
   ],
   providers: [],
