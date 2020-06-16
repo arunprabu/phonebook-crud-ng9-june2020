@@ -26,6 +26,7 @@ export class ContactService {
     return this.http.post(this.REST_API_URL, contactData)
         .pipe( map( (res: Contact) => {  // 3. get the Response from REST API
           console.log(res);
+          // work with resp
           // 4. Send the Response to the component
           return res;
         }));
@@ -37,6 +38,8 @@ export class ContactService {
     return this.http.get(this.REST_API_URL)
       .pipe( map ((res: any) => { // 3. get the resp from the REST API
         console.log(res);
+        // with with the resp
+        // sort, filter, ignore, change the data, flip
         return res.data; // 4. send it back to the comp
       }));
   }
@@ -53,6 +56,7 @@ export class ContactService {
 
   updateContact(contactData) {
     console.log(contactData);
+    // one req
     return this.http.put(this.REST_API_URL + '/' + contactData.id, contactData)
       .pipe(map( (res: any) => { // 3. get the resp from rest api
         console.log(res);
@@ -60,4 +64,26 @@ export class ContactService {
       }));
   }
 
+  deleteContact(id) {
+    console.log(id);
+
+    const deleteContactPromise = new Promise( ( resolve, reject ) => {
+      return this.http.delete(this.REST_API_URL + '/' + id)
+        .toPromise()
+        .then( (res: any ) => {
+          console.log(res);
+          resolve( 'Deleted Successfully' );
+        })
+        .catch( ( err: any) => {
+          console.log(err);
+          reject(err);
+        })
+        .finally( () => {
+          console.log('It\'s over');
+        });
+    });
+
+    return deleteContactPromise;
+
+  }
 }

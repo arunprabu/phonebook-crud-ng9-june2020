@@ -52,4 +52,12 @@ export class ContactDetailsComponent implements OnInit {
         }, 4000);
       });
   }
+
+  async deleteContactHandler(id){
+    console.log(id);
+
+    let result = await this.contactService.deleteContact(id);
+    console.log(result);
+
+  }
 }

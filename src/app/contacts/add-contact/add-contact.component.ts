@@ -16,7 +16,7 @@ export class AddContactComponent implements OnInit {
 
   isSaved: boolean;
 
-  constructor( private contactService: ContactService  ) { }
+  constructor( private contactService: ContactService) { }
 
   ngOnInit(): void {
     // Step 1.. continues...

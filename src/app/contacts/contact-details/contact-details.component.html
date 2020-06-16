@@ -11,7 +11,7 @@
             <button type="button" class="btn btn-primary" (click)='onEditModalOpen()'
             data-toggle='modal' data-target='#editContactModal' 
             >Edit</button>
-            <button type="button" class="btn btn-danger">Delete</button>
+            <button type="button" class="btn btn-danger" (click)='deleteContactHandler(contactData.id)'>Delete</button>
     
             <!-- Modal -->
             <div class="modal fade" id="editContactModal" tabindex="-1" 
