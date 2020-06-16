@@ -1,7 +1,7 @@
-import { Contact.Model } from './contact.model';
+import { Contact } from './contact.model';
 
-describe('Contact.Model', () => {
+describe('Contact', () => {
   it('should create an instance', () => {
-    expect(new Contact.Model()).toBeTruthy();
+    expect(new Contact()).toBeTruthy();
   });
 });

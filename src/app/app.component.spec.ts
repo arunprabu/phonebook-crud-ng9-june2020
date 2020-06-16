@@ -20,16 +20,24 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
+  // test case
   it(`should have as title 'phonebook-crud-ng9'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('phonebook-crud-ng9');
+    expect(app.title).toEqual('Phone Book!!');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('phonebook-crud-ng9 app is running!');
+    const compiled = fixture.nativeElement; // html element
+    expect(compiled.querySelector('.container p').textContent).toContain('wow');
   });
+
+  it('should add two numbers', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.add(10, 20)).toEqual(30);
+  });
+
 });

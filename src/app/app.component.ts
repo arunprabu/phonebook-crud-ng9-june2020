@@ -8,5 +8,9 @@ import { Component } from '@angular/core'; // node_modules import
 })
 export class AppComponent {
   // ts
-  title = 'phonebook-crud-ng9';
+  title = 'Phone Book!!';
+
+  add(a, b){
+    return a + b;
+  }
 }

@@ -1,7 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+// what comp is put under test
 import { HomeComponent } from './home.component';
 
+// group of related test cases -- test spec
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
@@ -19,7 +21,11 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
+  // test case
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  
+
 });
